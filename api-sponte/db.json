@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Hyperx HX-HSCS-BK/NA Cloud Stinger",
+      "description": "Headset leve com fones de ouvido giratórios em 90 graus. Drivers direcionais de 50 mm para maior precisão do áudio",
+      "measures": "15/8/20",
+      "weight": "350g",
+      "bar_code": 1122333251154888888884565413211,
+      "category": ["electronic", "hedset"],
+      "price": "249.90",
+      "acquisition_date": "10/05/2021",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61hAn48vroL._AC_SL1500_.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Notebook Acer Swift 3 SF314-57-57VY Intel Core I5 16GB 256GB SSD 14' Windows 10",
+      "description": "Intel Core I5-1035G4, Quad core, Frequência de 1.1GHz à 3.7GHz, 6MB Intel Smart Cache. Gráficos Intel Iris Plus com memória compartilhada com a memória RAM.",
+      "measures": "15/8/20",
+      "weight": "350g",
+      "bar_code": 1333582333251154826888984565413211,
+      "category": ["electronic", "notebook"],
+      "price": "7.349,90",
+      "acquisition_date": "10/05/2021",
+      "image": "https://acerstore.vteximg.com.br/arquivos/ids/157723-760-760/01.jpg?v=637420995164500000"
+    }
+  ]
+}
