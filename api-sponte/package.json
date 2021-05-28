@@ -1,12 +1,16 @@
 {
-  "name": "backend-fake",
+  "name": "json-server-sponte",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "db server",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "json-server,heroku, node, REST API"
+  ],
   "license": "MIT",
   "dependencies": {
-    "json-server": "^0.16.3"
-  },
-  "scripts": {
-    "start": "json-server --watch db.json --port 3004"
+    "json-server": "^0.16.1"
   }
 }
