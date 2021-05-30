@@ -7,7 +7,7 @@
       "measures": "15/8/20",
       "weight": "350g",
       "bar_code": 1122333251154888888884565413211,
-      "category": ["electronic", "hedset"],
+      "category": "electronic, hedset",
       "price": "249.90",
       "acquisition_date": "10/05/2021",
       "image": "https://images-na.ssl-images-amazon.com/images/I/61hAn48vroL._AC_SL1500_.jpg"
@@ -19,7 +19,7 @@
       "measures": "15/8/20",
       "weight": "350g",
       "bar_code": 1333582333251154826888984565413211,
-      "category": ["electronic", "notebook"],
+      "category": "electronic, notebook",
       "price": "7.349,90",
       "acquisition_date": "10/05/2021",
       "image": "https://acerstore.vteximg.com.br/arquivos/ids/157723-760-760/01.jpg?v=637420995164500000"
