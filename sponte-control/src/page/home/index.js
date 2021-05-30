@@ -55,7 +55,7 @@ export const Home = () => {
             weight: "",
             measures: "",
             description: "",
-            category: "",
+            category: [],
             bar_code: "",
             acquisition_date: "",
             image: "",

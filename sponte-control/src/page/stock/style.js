@@ -21,11 +21,8 @@ export const ShowProducts = styled.div`
   width: 50%;
   overflow-y: auto;
 
-  ::-webkit-scrollbar-track {
-    background-color: #f4f4f4;
-  }
   ::-webkit-scrollbar {
-    width: 6px;
+    width: 5px;
     background: #f4f4f4;
   }
   ::-webkit-scrollbar-thumb {
@@ -34,6 +31,17 @@ export const ShowProducts = styled.div`
 `;
 export const DetailsProduct = styled.div`
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  padding: 0 15px;
+  img {
+    width: 250px;
+  }
+  li {
+    margin-bottom: 10px;
+  }
 `;
 
 export const DivProduct = styled.div`
@@ -51,4 +59,5 @@ export const DivProduct = styled.div`
   .simpleDescription {
     width: 50%;
   }
+  cursor: pointer;
 `;

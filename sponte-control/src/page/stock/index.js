@@ -11,12 +11,13 @@ import {
 
 export const Stock = () => {
   const [products, setProducts] = useState([]);
+  const [currentProduct, setCurrentProdunt] = useState({});
 
   useEffect(() => {
     api.get("products").then((response) => setProducts(response.data));
   }, []);
 
-  console.log(products);
+  console.log(currentProduct);
   return (
     <>
       <Header />
@@ -27,7 +28,7 @@ export const Stock = () => {
           {products &&
             products.map((item, index) => (
               <>
-                <DivProduct>
+                <DivProduct key={index} onClick={() => setCurrentProdunt(item)}>
                   <img src={item.image} />
                   <div className="simpleDescription">
                     <h3>{item.title}</h3>
@@ -39,7 +40,23 @@ export const Stock = () => {
               </>
             ))}
         </ShowProducts>
-        <DetailsProduct></DetailsProduct>
+        <DetailsProduct>
+          {currentProduct && (
+            <>
+              <img src={currentProduct.image} />
+              <h3>{currentProduct.title}</h3>
+              <div>
+                <ul>
+                  <li>{currentProduct.description}</li>
+                  <li>Valor: {currentProduct.price}</li>
+                  <li>Categoria: {currentProduct.category.join(", ")}</li>
+                  <li>Data de aquisição: {currentProduct.acquisition_date}</li>
+                  <li>Código de barras: {currentProduct.bar_code}</li>
+                </ul>
+              </div>
+            </>
+          )}
+        </DetailsProduct>
       </MainContainer>
     </>
   );
