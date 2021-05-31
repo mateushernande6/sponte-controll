@@ -40,7 +40,6 @@ export const Home = () => {
     <textarea className="my-custom-input" type="text" {...props} />
   );
 
-  console.log(actualDay);
   return (
     <>
       <motion.div

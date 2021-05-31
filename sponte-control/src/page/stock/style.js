@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+const media = {
+  mobile1: "@media(max-width: 950px)",
+};
+
 export const TitleH2 = styled.h2`
   font-family: "Roboto", sans-serif;
   color: #00aee6;
@@ -20,11 +24,19 @@ export const MainContainer = styled.main`
     font-family: monospace;
     margin-bottom: 5px;
   }
+
+  ${media.mobile1} {
+    flex-direction: column;
+    height: 100vh;
+  }
 `;
 
 export const ShowProducts = styled.div`
   width: 50%;
   overflow-y: auto;
+  ${media.mobile1} {
+    width: 100%;
+  }
 
   ::-webkit-scrollbar {
     width: 5px;
@@ -79,6 +91,18 @@ export const DetailsProduct = styled.div`
     color: #fff;
     font-family: "Roboto", sans-serif;
     font-weight: bold;
+  }
+  ${media.mobile1} {
+    width: 95.5%;
+    margin-top: 20px;
+
+    ::-webkit-scrollbar {
+      width: 5px;
+      background: #c4c4c4;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c4c4c4;
+    }
   }
 `;
 

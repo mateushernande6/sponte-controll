@@ -42,7 +42,6 @@ export const Stock = () => {
     api.get("products").then((response) => setProducts(response.data));
   }, [update]);
 
-  console.log(currentProduct.price);
   return (
     <>
       <motion.div
@@ -104,7 +103,6 @@ export const Stock = () => {
                         api
                           .patch(`products/${currentProduct.id}`, values)
                           .then((response) => {
-                            console.log(response);
                             setCurrentProduct(response.data);
                             setUpdate(response);
                             resetForm();
