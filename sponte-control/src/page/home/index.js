@@ -3,6 +3,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import api from "../../service";
 import { Header } from "../../components/header";
+import { motion } from "framer-motion";
 
 const schema = Yup.object().shape({
   title: Yup.string()
@@ -42,126 +43,149 @@ export const Home = () => {
   console.log(actualDay);
   return (
     <>
-      <Header />
+      <motion.div
+        initial={{ translateX: "100%" }}
+        animate={{ translateX: "0%" }}
+        transition={{ duration: 0.7 }}
+      >
+        <Header />
 
-      <TitleH2>CADASTRO DE PRODUTOS</TitleH2>
+        <TitleH2>CADASTRO DE PRODUTOS</TitleH2>
 
-      <MainContainer>
-        <Formik
-          validationSchema={schema}
-          initialValues={{
-            title: "",
-            price: "",
-            weight: "",
-            measures: "",
-            description: "",
-            category: [],
-            bar_code: "",
-            acquisition_date: "",
-            image: "",
-          }}
-          onSubmit={(values) =>
-            api
-              .post("products", values)
-              .then((response) => console.log(response))
-              .catch((err) => console.log(err))
-          }
-        >
-          {({ errors }) => (
-            <Form>
-              <DivColumn1>
-                <div className="divInput">
-                  <Field type="text" name="title" placeholder="Titulo" />
-                  {errors.title && <div className="error">{errors.title}</div>}
-                </div>
+        <MainContainer>
+          <Formik
+            validationSchema={schema}
+            initialValues={{
+              title: "",
+              price: "",
+              weight: "",
+              measures: "",
+              description: "",
+              category: "",
+              bar_code: "",
+              acquisition_date: "",
+              image: "",
+            }}
+            onSubmit={(values, { resetForm }) =>
+              api
+                .post("products", values)
+                .then((response) => {
+                  console.log(response);
+                  resetForm();
+                })
+                .catch((err) => console.log(err))
+            }
+          >
+            {({ errors }) => (
+              <Form>
+                <DivColumn1>
+                  <div className="divInput">
+                    <Field type="text" name="title" placeholder="Titulo" />
+                    {errors.title && (
+                      <div className="error">{errors.title}</div>
+                    )}
+                  </div>
 
-                <div className="divInput">
-                  <Field
-                    type="number"
-                    name="price"
-                    placeholder="Valor do produto"
-                  />
-                  {errors.price && <div className="error">{errors.price}</div>}
-                </div>
+                  <div className="divInput">
+                    <Field
+                      type="number"
+                      name="price"
+                      placeholder="Valor do produto"
+                    />
+                    {errors.price && (
+                      <div className="error">{errors.price}</div>
+                    )}
+                  </div>
 
-                <div className="divInput">
-                  <Field
-                    type="text"
-                    name="measures"
-                    placeholder="Medidas A/L/C"
-                  />
-                  {errors.measures && (
-                    <div className="error">{errors.measures}</div>
-                  )}
-                </div>
+                  <div className="divInput">
+                    <Field
+                      type="text"
+                      name="measures"
+                      placeholder="Medidas A/L/C"
+                    />
+                    {errors.measures && (
+                      <div className="error">{errors.measures}</div>
+                    )}
+                  </div>
 
-                <div className="divInput">
-                  <Field type="text" name="weight" placeholder="Peso (Kg)" />
-                  {errors.weight && (
-                    <div className="error">{errors.weight}</div>
-                  )}
-                </div>
+                  <div className="divInput">
+                    <Field type="text" name="weight" placeholder="Peso (Kg)" />
+                    {errors.weight && (
+                      <div className="error">{errors.weight}</div>
+                    )}
+                  </div>
 
-                <div className="txta">
-                  <Field
-                    name="description"
-                    as={CustomInputComponent}
-                    cols="30"
-                    rows="10"
-                    placeholder="Descrição"
-                  />
-                  {errors.description && (
-                    <div className="error">{errors.description}</div>
-                  )}
-                </div>
-              </DivColumn1>
+                  <div className="txta">
+                    <Field
+                      name="description"
+                      as={CustomInputComponent}
+                      cols="30"
+                      rows="10"
+                      placeholder="Descrição"
+                    />
+                    {errors.description && (
+                      <div className="error">{errors.description}</div>
+                    )}
+                  </div>
+                </DivColumn1>
 
-              <DivColumn2>
-                <div className="divInput">
-                  <Field type="text" name="category" placeholder="Categoria" />
-                  {errors.category && (
-                    <div className="error">{errors.category}</div>
-                  )}
-                </div>
+                <DivColumn2>
+                  <div className="divInput">
+                    <Field
+                      type="text"
+                      name="category"
+                      placeholder="Categoria"
+                    />
+                    {errors.category && (
+                      <div className="error">{errors.category}</div>
+                    )}
+                  </div>
 
-                <div className="divInput">
-                  <Field
-                    type="number"
-                    name="bar_code"
-                    placeholder="Código de barras"
-                  />
-                  {errors.bar_code && (
-                    <div className="error">{errors.bar_code}</div>
-                  )}
-                </div>
+                  <div className="divInput">
+                    <Field
+                      type="number"
+                      name="bar_code"
+                      placeholder="Código de barras"
+                    />
+                    {errors.bar_code && (
+                      <div className="error">{errors.bar_code}</div>
+                    )}
+                  </div>
 
-                <div className="divInput">
-                  <Field
-                    type="date"
-                    name="acquisition_date"
-                    max={actualDay}
-                    placeholder="Data de aquisição"
-                    className="inputDate"
-                  />
-                  {errors.acquisition_date && (
-                    <div className="error">{errors.acquisition_date}</div>
-                  )}
-                </div>
+                  <div className="divInput">
+                    <Field
+                      type="date"
+                      name="acquisition_date"
+                      max={actualDay}
+                      placeholder="Data de aquisição"
+                      className="inputDate"
+                    />
+                    {errors.acquisition_date && (
+                      <div className="error">{errors.acquisition_date}</div>
+                    )}
+                  </div>
 
-                <div className="divInput">
-                  <Field type="url" name="image" placeholder="Url do produto" />
-                  {errors.image && <div className="error">{errors.image}</div>}
-                </div>
+                  <div className="divInput">
+                    <Field
+                      type="url"
+                      name="image"
+                      placeholder="Url do produto"
+                    />
+                    {errors.image && (
+                      <div className="error">{errors.image}</div>
+                    )}
+                  </div>
 
-                <div className="btn">
-                  <button type="submit">Cadastrar</button>
-                  {errors.description && <div className="visual">dsadf</div>}
-                </div>
-              </DivColumn2>
-            </Form>
-          )}
-        </Formik>
-      </MainContainer>
+                  <div className="btn">
+                    <button type="submit">Cadastrar</button>
+                    {errors.description && <div className="visual">dsadf</div>}
+                  </div>
+                </DivColumn2>
+              </Form>
+            )}
+          </Formik>
+        </MainContainer>
+      </motion.div>
     </>
   );
 };

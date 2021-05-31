@@ -15,6 +15,11 @@ export const MainContainer = styled.main`
   border-radius: 8px;
   padding: 15px;
   display: flex;
+  .error {
+    color: #cc2525;
+    font-family: monospace;
+    margin-bottom: 5px;
+  }
 `;
 
 export const ShowProducts = styled.div`
@@ -28,6 +33,9 @@ export const ShowProducts = styled.div`
   ::-webkit-scrollbar-thumb {
     background: #00aee6;
   }
+  .titleh2 {
+    text-align: center;
+  }
 `;
 export const DetailsProduct = styled.div`
   width: 50%;
@@ -38,9 +46,39 @@ export const DetailsProduct = styled.div`
   padding: 0 15px;
   img {
     width: 250px;
+    border-radius: 5px;
   }
   li {
     margin-bottom: 10px;
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    background: #f4f4f4;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #00aee6;
+  }
+  .btnUpdate {
+    border: none;
+    outline: none;
+    height: 25px;
+    padding: 0 10px;
+    border-radius: 5px;
+    background: #00aee6;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+  }
+  .btnCloseDelete {
+    border: none;
+    outline: none;
+    height: 25px;
+    padding: 0 10px;
+    border-radius: 5px;
+    background: #ca161c;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
   }
 `;
 
@@ -55,9 +93,23 @@ export const DivProduct = styled.div`
   img {
     width: 100px;
     height: 100px;
+    border-radius: 5px;
   }
   .simpleDescription {
     width: 50%;
   }
   cursor: pointer;
+`;
+
+export const Modal = styled.div`
+  width: 250px;
+
+  input {
+    outline: none;
+    width: 90%;
+    height: 20px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+  }
 `;

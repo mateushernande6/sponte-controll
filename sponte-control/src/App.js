@@ -6,7 +6,7 @@ const App = () => {
   const alterPage = () => {
     setTimeout(() => {
       history.push("/home");
-    }, 2000);
+    }, 3000);
   };
 
   alterPage();
